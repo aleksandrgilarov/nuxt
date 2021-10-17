@@ -1,0 +1,59 @@
+.articles {
+  counter-reset: article-nr;
+  .article {
+    counter-increment: article-nr;
+    .nr:after {
+      content: counter(article-nr);
+      font-size: 48px;
+      font-weight: 600;
+      color: $white;
+      border-radius: 50%;
+    }
+    .cover {
+      width: 100%;
+      height: 500px;
+      display: flex;
+      > a {
+        align-self: end;
+        &:hover {
+          text-decoration: none;
+        }
+        .title {
+          font-size: 4.25rem;
+          line-height: 4.5rem;
+          max-width: 50%;
+          color: $white;
+          padding-left: 65px;
+          padding-right: 65px;
+        }
+      }
+
+    }
+
+    .excerpt-container {
+      .excerpt {
+        background-color: $bg-black;
+        padding: 65px;
+        color: $white;
+        line-height: 48px;
+        font-size: 40px;
+      }
+      .nr-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $brand-blue;
+        height: 100%;
+        .nr {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 190px;
+          height: 190px;
+          border-radius: 50%;
+          border: 2px solid rgba($white, 0.5);
+        }
+      }
+    }
+  }
+}
